@@ -1,9 +1,29 @@
+import {BrowserRouter, Routes, Route} from 'react-router-dom';
+import Home from './pages/Home';
 
+import Courses from './pages/Courses';
+import NavBar from './components/NavBar';
+import Footer from './components/Footer';
+import About from './pages/About';
+import Login from './pages/Login';
+import SignUp from './pages/SignUp';
 
 const App = () => {
   return (
     <div>
-      hello
+      <BrowserRouter>
+      <NavBar></NavBar>
+        <Routes>
+            <Route path="/" element={<Home></Home>}></Route>
+            <Route path="/courses" element={<Courses></Courses>}></Route>
+            <Route path="/about" element={<About></About>}></Route>
+            <Route path="/login" element={<Login></Login>}></Route>
+            <Route path="/signup" element={<SignUp></SignUp>}></Route>
+            
+        </Routes>
+        <Footer></Footer>
+      </BrowserRouter>
+      
     </div>
   );
 };
