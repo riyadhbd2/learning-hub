@@ -13,6 +13,9 @@ const Login = () => {
                 </div>
                 <div>
                     <h1>PAssword:</h1>
+                    <p>
+
+                    </p>
                     <input className="border border-green-500" type="password" name="password" id="password" placeholder="password"/>
                 </div>
                 <div>

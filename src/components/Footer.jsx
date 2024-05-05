@@ -2,7 +2,7 @@
 
 const Footer = () => {
     return (
-        <div>
+        <div className="flex justify-center">
             Footer
         </div>
     );
