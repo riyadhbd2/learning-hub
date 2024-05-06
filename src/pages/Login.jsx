@@ -1,11 +1,32 @@
-
+import {useContext} from 'react';
 import { NavLink } from 'react-router-dom';
+import { AuthContext } from '../contexts/UserContext';
 
 const Login = () => {
+
+    const {login} = useContext(AuthContext);
+
+    const handleLogin =(e)=>{
+        e.preventDefault();
+        const form = e.target;
+        const email = form.email.value;
+        const password = form.password.value;
+        console.log(email, password);
+
+        login(email, password)
+        .then(result=>{
+            const user = result.user;
+            console.log(user);
+        })
+        .catch(error=>{
+            console.error(error);
+        })
+
+    }
     return (
         <div className="container mx-auto flex justify-center mt-52 border border-blue-500 w-52">
 
-            <form>
+            <form onSubmit={handleLogin}>
                 <h1 className="text-center text-orange-400 text-2xl">Login</h1>
                 <div>
                     <h1>Email:</h1>
@@ -23,10 +44,10 @@ const Login = () => {
                 </div>
                 <div className="text-center pb-4 mt-2">
                     <button className="text-white bg-orange-400 rounded-lg p-1 text-sm" type="submit">Sign In</button>
-                </div>
+                </div> 
             </form>
-            
         </div>
+            
     );
 };
 

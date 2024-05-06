@@ -1,6 +1,10 @@
+
 import { NavLink } from "react-router-dom";
 
+
 const NavBar = () => {
+
+
   return (
     <div className="flex justify-center bg-blue-500 text-white h-14 items-center ">
       <div></div>
@@ -30,6 +34,7 @@ const NavBar = () => {
         >
           About
         </NavLink>
+    
         <NavLink
           className={({ isActive }) => {
             return isActive ? "text-yellow-500" : "text-white";
@@ -46,6 +51,7 @@ const NavBar = () => {
         >
           SignUp
         </NavLink>
+        
       </div>
     </div>
   );
