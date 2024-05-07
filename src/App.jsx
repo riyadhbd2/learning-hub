@@ -8,6 +8,7 @@ import About from './pages/About';
 import Login from './pages/Login';
 import SignUp from './pages/SignUp';
 import NavBar from './components/NavBar';
+import UserProfile from './pages/UserProfile';
 
 const App = () => {
   return (
@@ -22,6 +23,7 @@ const App = () => {
             <Route path="/login" element={<Login></Login>}></Route>
             <Route path="/login" element={<Login></Login>}></Route>
             <Route path="/signup" element={<SignUp></SignUp>}></Route>
+            <Route path="/userprofile" element={<UserProfile></UserProfile>}></Route>
         </Routes>
 
         <Footer></Footer>

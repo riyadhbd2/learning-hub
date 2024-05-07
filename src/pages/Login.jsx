@@ -4,7 +4,8 @@ import { AuthContext } from '../contexts/UserContext';
 
 const Login = () => {
 
-    const {login} = useContext(AuthContext);
+    const {user, login} = useContext(AuthContext);
+
 
     const handleLogin =(e)=>{
         e.preventDefault();
@@ -33,7 +34,7 @@ const Login = () => {
                     <input className="border border-green-500" type="email" name="email" id="email" placeholder="Email" />
                 </div>
                 <div>
-                    <h1>PAssword:</h1>
+                    <h1>Password:</h1>
                     <p>
 
                     </p>
@@ -44,7 +45,7 @@ const Login = () => {
                 </div>
                 <div className="text-center pb-4 mt-2">
                     <button className="text-white bg-orange-400 rounded-lg p-1 text-sm" type="submit">Sign In</button>
-                </div> 
+                </div>
             </form>
         </div>
             
