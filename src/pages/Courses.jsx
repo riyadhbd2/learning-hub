@@ -2,8 +2,8 @@
 
 const Courses = () => {
     return (
-        <div>
-            <h1>All Courses</h1>
+        <div className="container mx-auto">
+            <h1>All Courses are</h1>
         </div>
     );
 };
