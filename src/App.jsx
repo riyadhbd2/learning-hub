@@ -10,6 +10,7 @@ import NavBar from './components/NavBar';
 import UserProfile from './pages/UserProfile';
 import Faq from './pages/Faq';
 import Blog from './pages/Blog';
+import CourseDetails from './pages/CourseDetails';
 // import PrivateRoute from './routes/PrivateRoute';
 
 const App = () => {
@@ -26,6 +27,7 @@ const App = () => {
             <Route path="/login" element={<Login></Login>}></Route>
             <Route path="/signup" element={<SignUp></SignUp>}></Route>
             <Route path="/userprofile" element={<UserProfile></UserProfile>}></Route>
+            <Route path="/coursedetails/:id" element={<CourseDetails></CourseDetails>}></Route>
         </Routes>
 
         <Footer></Footer>
