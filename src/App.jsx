@@ -8,6 +8,8 @@ import Faq from './pages/Faq';
 import Blog from './pages/Blog';
 import CourseDetails from './pages/CourseDetails';
 import Head from './layout/Head';
+import CheckOut from './pages/CheckOut';
+import PrivateRoute from './routes/PrivateRoute';
 
 const App = () => {
 
@@ -21,7 +23,7 @@ const App = () => {
           element: <Home></Home>
         },
         {
-          path: 'courses',
+          path: '/courses',
           element: <Courses></Courses>
         },
         {
@@ -41,12 +43,19 @@ const App = () => {
           element: <SignUp></SignUp>
         },
         {
-          path: 'userprofile',
+          path: '/userprofile',
           element: <UserProfile></UserProfile>
         },
         {
-          path: '/coursedetails/:id',
-          element: <CourseDetails></CourseDetails>
+          path: '/course/:id',
+          element: <CourseDetails></CourseDetails>,
+          // loader: ({params}) => fetch(`http://localhost:5173/details/${params.id}`)
+          loader: ({params}) => fetch(`http://localhost:3000/details/${params.id}`)
+        },
+        {
+          path:'/checkout',
+          element: <CheckOut></CheckOut>
+          
         }
       ]
     }
