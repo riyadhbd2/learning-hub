@@ -11,6 +11,7 @@ import Head from './layout/Head';
 import CheckOut from './pages/CheckOut';
 import PrivateRoute from './routes/PrivateRoute';
 
+
 const App = () => {
 
   const router = createBrowserRouter([
@@ -54,8 +55,16 @@ const App = () => {
         },
         {
           path:'/checkout',
-          element: <CheckOut></CheckOut>
+          element: <PrivateRoute>
+            <CheckOut></CheckOut>
+          </PrivateRoute>
           
+        },
+        {
+          path:'/profile',
+          element: <PrivateRoute>
+            <UserProfile></UserProfile>
+          </PrivateRoute>
         }
       ]
     }

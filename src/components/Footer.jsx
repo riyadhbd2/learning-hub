@@ -2,8 +2,10 @@
 
 const Footer = () => {
     return (
-        <div className="flex justify-center">
-            Footer
+        <div className="flex justify-center bg-black h-28 fixed bottom-0 right-0 left-0">
+            <div>
+                <h1 className="text-white"> <small>© 2024 All right reserved Learning Hub.</small></h1>
+            </div>
         </div>
     );
 };
