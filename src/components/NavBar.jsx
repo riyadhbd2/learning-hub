@@ -3,28 +3,28 @@ import { NavLink } from "react-router-dom";
 import logo from "../assets/logo.png";
 import { auth, AuthContext } from "../contexts/UserContext";
 
-
 const NavBar = () => {
   const { user, logOut } = useContext(AuthContext);
 
   // Dark and light Mode
 
-  const [theme, setTheme] = useState(localStorage.getItem("theme") ? localStorage.getItem("theme") : "light");
+  const [theme, setTheme] = useState(
+    localStorage.getItem("theme") ? localStorage.getItem("theme") : "light"
+  );
 
-  useEffect(() =>{
+  useEffect(() => {
     localStorage.setItem("theme", theme);
     const localTheme = localStorage.getItem("theme");
     document.querySelector("html").setAttribute("data-theme", localTheme);
-  },[theme]);
+  }, [theme]);
 
-  const handleToggle = (e) =>{
-    if(e.target.checked){
+  const handleToggle = (e) => {
+    if (e.target.checked) {
       setTheme("dark");
-    }
-    else{
+    } else {
       setTheme("light");
     }
-  }
+  };
 
   // LogOut function
   const handleLogOut = () => {
@@ -39,7 +39,7 @@ const NavBar = () => {
 
   return (
     <>
-      <div className="bg-blue-500 flex justify-between h-12">
+      <div className="bg-blue-500 flex justify-between h-24">
         <div className="ml-10 flex items-center text-white">
           <img className="w-8" src={logo} alt="" />
           <NavLink className="ml-1" to="/">
@@ -90,12 +90,17 @@ const NavBar = () => {
                   to="/userprofile"
                 >
                   {/* {user.email} */}
-                  <NavLink to="/profile" title={user.displayName}>Logged In</NavLink>
+                  <NavLink  className={({ isActive }) => {
+                    return isActive ? "text-yellow-500" : "text-white";
+                  }} to="/profile" title={user.displayName}>
+                    Logged In
+                  </NavLink>
                 </NavLink>
                 <div>
-                  <button className="text-white" onClick={handleLogOut}>LogOut</button>
+                  <button className="text-white" onClick={handleLogOut}>
+                    LogOut
+                  </button>
                 </div>
-                
               </>
             ) : (
               <>
@@ -117,15 +122,20 @@ const NavBar = () => {
                 </NavLink>
               </>
             )}
-{/* Dark and light mode from daisy UI */}
+            {/* Dark and light mode from daisy UI */}
             <div>
               <label className="swap swap-rotate">
                 {/* this hidden checkbox controls the state */}
-                <input className="" type="checkbox" onChange={handleToggle} checked={theme === "light" ? false: true} />
+                <input
+                  className=""
+                  type="checkbox"
+                  onChange={handleToggle}
+                  checked={theme === "light" ? false : true}
+                />
 
                 {/* sun icon */}
                 <svg
-                  className="swap-on fill-current w-10 h-10"
+                  className="swap-on fill-current w-6 h-6 text-white"
                   xmlns="http://www.w3.org/2000/svg"
                   viewBox="0 0 24 24"
                 >
@@ -134,7 +144,7 @@ const NavBar = () => {
 
                 {/* moon icon */}
                 <svg
-                  className="swap-off fill-current w-10 h-10"
+                  className="swap-off fill-current w-6 h-6 text-white"
                   xmlns="http://www.w3.org/2000/svg"
                   viewBox="0 0 24 24"
                 >

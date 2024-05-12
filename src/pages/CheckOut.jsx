@@ -2,8 +2,8 @@
 
 const CheckOut = () => {
     return (
-        <div className="container mx-auto">
-            <h1>CheckOut Page</h1>     
+        <div className="container mx-auto mt-10">
+            <h1C>This is checkOut Page!</h1C>     
         </div>
     );
 };

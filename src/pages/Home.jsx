@@ -2,8 +2,8 @@
 
 const Home = () => {
     return (
-        <div>
-            <h1>Home</h1>
+        <div className="container mx-auto mt-10">
+            <h1>This is Home Page</h1>
         </div>
     );
 };
