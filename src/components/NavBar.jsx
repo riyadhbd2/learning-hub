@@ -93,7 +93,7 @@ const NavBar = () => {
                   <NavLink  className={({ isActive }) => {
                     return isActive ? "text-yellow-500" : "text-white";
                   }} to="/profile" title={user.displayName}>
-                    Logged In
+                    {user.displayName}
                   </NavLink>
                 </NavLink>
                 <div>
